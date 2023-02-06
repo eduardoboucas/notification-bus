@@ -158,7 +158,7 @@ export class NotificationBus {
 
   private getLocalItem(item: Item): LocalItem {
     const fingerprint = JSON.stringify({
-      text: item.text,
+      text: item.body,
       type: item.severity,
     });
     const id = createHash("sha1").update(fingerprint).digest("hex");

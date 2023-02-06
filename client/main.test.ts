@@ -11,7 +11,7 @@ describe("`getItems()`", async () => {
     const mockResponse: APIResponse = {
       items: [
         {
-          text: "This is a test",
+          body: "This is a test",
           severity: 3,
           display_interval: 30_000,
         },
@@ -30,12 +30,12 @@ describe("`getItems()`", async () => {
     const items1 = await bus.getItems({ markAsRendered: true });
 
     expect(items1[0].last_rendered).toBe(0);
-    expect(items1[0].text).toBe("This is a test");
+    expect(items1[0].body).toBe("This is a test");
 
     const items2 = await bus.getItems({ markAsRendered: true });
 
     assert.approximately(items2[0].last_rendered as number, Date.now(), 100);
-    expect(items2[0].text).toBe("This is a test");
+    expect(items2[0].body).toBe("This is a test");
 
     expect(scope.isDone()).toBe(true);
   });
@@ -47,7 +47,7 @@ describe("`render()`", async () => {
     const mockResponse: APIResponse = {
       items: [
         {
-          text: "This is a test",
+          body: "This is a test",
           severity: 3,
           display_interval: 30_000,
         },
@@ -55,7 +55,7 @@ describe("`render()`", async () => {
     };
     const renderer = (items: Item[]) => {
       assert.equal(items.length, 1);
-      assert.equal(items[0].text, "This is a test");
+      assert.equal(items[0].body, "This is a test");
     };
     const mockRenderer = vi.fn().mockImplementation(renderer);
     const scope = nock("https://my-cli.netlify.app")

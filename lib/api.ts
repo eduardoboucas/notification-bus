@@ -9,7 +9,7 @@ export interface APIResponse {
 }
 
 export interface Item {
-  text: string;
+  body: string;
   title?: string;
   severity: ItemType;
   display_interval: number;

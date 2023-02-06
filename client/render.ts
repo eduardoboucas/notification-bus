@@ -23,7 +23,7 @@ const renderItem = (item: LocalItem) => {
     padding: 1,
     title: item.title,
   };
-  const wrappedText = wrap(item.text, { width: 60 });
+  const wrappedText = wrap(item.body, { width: 60 });
 
   return boxen(wrappedText, options);
 };
