@@ -12,7 +12,7 @@ export interface Item {
   body: string;
   title?: string;
   severity: ItemType;
-  display_interval: number;
+  display_interval: number | string;
   inputs?: string[];
   min_app_version?: string;
   max_app_version?: string;

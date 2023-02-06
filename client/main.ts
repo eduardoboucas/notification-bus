@@ -6,6 +6,7 @@ import envPaths from "env-paths";
 import got from "got";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
+import ms from "ms";
 import semver from "semver";
 
 import { APIResponse, Item } from "../lib/api.js";
@@ -162,11 +163,16 @@ export class NotificationBus {
       type: item.severity,
     });
     const id = createHash("sha1").update(fingerprint).digest("hex");
+    const displaInterval =
+      item.display_interval === undefined
+        ? 0
+        : ms(item.display_interval.toString());
 
     return {
       last_rendered: 0,
       ...item,
       id,
+      display_interval: displaInterval,
     };
   }
 
