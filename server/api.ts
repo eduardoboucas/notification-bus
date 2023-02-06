@@ -46,4 +46,4 @@ const api: Handler = async (event) => {
   };
 };
 
-export const handler = builder(api);
+export const handler = api;
