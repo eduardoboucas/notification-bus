@@ -1,0 +1,33 @@
+{
+  "name": "notification-bus",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@netlify/functions": "^1.4.0",
+    "@types/node": "^18.11.18",
+    "@types/semver": "^7.3.13",
+    "nock": "^13.3.0",
+    "tmp-promise": "^3.0.3",
+    "typescript": "^4.9.5",
+    "vitest": "^0.28.4"
+  },
+  "dependencies": {
+    "boxen": "^7.0.1",
+    "env-paths": "^2.2.1",
+    "got": "^12.5.3",
+    "lowdb": "^5.1.0",
+    "semver": "^7.3.8",
+    "word-wrap": "^1.2.3"
+  }
+}

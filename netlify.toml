@@ -1,0 +1,8 @@
+[functions]
+directory = "server"
+
+[[redirects]]
+force = true
+from = "/:version"
+status = 200
+to = "/.netlify/builders/api/:version"
