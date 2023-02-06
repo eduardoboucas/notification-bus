@@ -1,5 +1,6 @@
 [functions]
 directory = "server"
+included_files = ["data/**"]
 
 [[redirects]]
 force = true
