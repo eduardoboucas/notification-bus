@@ -12,7 +12,7 @@ let data = fs
 
 const api: Handler = async (event) => {
   const urlParts = event.path.split("/");
-  const version = urlParts[3];
+  const version = urlParts[2];
 
   if (!semver.valid(version)) {
     return {
