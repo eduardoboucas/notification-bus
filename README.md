@@ -1,4 +1,4 @@
-# 🚌 notification-bus
+# 🚌 Notification Bus
 
 A Node.js library for loading and rendering notifications from a remote API.
 
@@ -18,6 +18,8 @@ For a one-click deploy to Netlify, use the button below.
 
 ## Usage
 
+### Client
+
 To use `notification-bus`, you first need to create an instance of the library and set the API endpoint for loading notifications.
 
 ```ts
@@ -28,7 +30,6 @@ const bus = new NotificationBus({
   version: "1.0.0",
   url: "https://my-cli.netlify.app"
 })
-
 ```
 
 Once you have an instance, you can show all notifications relevant to your application using the `render` function.
@@ -59,6 +60,24 @@ const items = await bus.getItems()
 
 console.log(items)
 ```
+
+### Server
+
+To create new notifications, edit the `data/events.json` file and add entries to the array. Each entry can have the following properties:
+
+- `body` (required): The body text of the notification
+- `title` (optional): The title of the notification
+- `severity` (optional): A severity level for the notification (1: critical, 2: warning, 3: information), which will influence the way the notification is rendered
+- `display_interval` (optional): If set, defines the minimum interval at which a notification can be shown; for example, if set to `"30 min"`, that notification will be shown at most once every 30 minutes
+- `inputs` (optional): A list of inputs that should be sent in the `render`/`getItems` call for the notification to match (see [#inputs](Inputs))
+- `min_app_version` (optional): The minimum version of the app required for the notification to match
+- `max_app_version` (optional): The maximum version of the app required for the notification to match
+- `min_node_version` (optional): The minimum version of Node.js required for the notification to match
+- `max_node_version` (optional): The maximum version of Node.js required for the notification to match
+- `arch` (optional): A list of CPU types (in the format of `process.arch`) required for the notification to match
+- `platform` (optional): A list of operating systems (in the format of `process.platform`) required for the notification to match
+
+For more information about each property, see their [type definition](lib/api.ts).
 
 ## Configuration options
 
