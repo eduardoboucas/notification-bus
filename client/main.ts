@@ -163,7 +163,7 @@ export class NotificationBus {
       type: item.severity,
     });
     const id = createHash("sha1").update(fingerprint).digest("hex");
-    const displaInterval =
+    const displayInterval =
       item.display_interval === undefined
         ? 0
         : ms(item.display_interval.toString());
@@ -172,7 +172,7 @@ export class NotificationBus {
       last_rendered: 0,
       ...item,
       id,
-      display_interval: displaInterval,
+      display_interval: displayInterval,
     };
   }
 

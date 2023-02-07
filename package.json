@@ -1,18 +1,22 @@
 {
   "name": "notification-bus",
   "type": "module",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "A Node.js library for loading and rendering notifications from a remote API",
   "main": "index.js",
   "files": [
-    "dist/**/*"
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
   ],
   "scripts": {
-    "test": "vitest"
+    "build": "tsc",
+    "test": "vitest run",
+    "prepublishOnly": "npm install && npm test",
+    "prepack": "npm run build"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Eduardo Bouças <mail@eduardoboucas.com>",
+  "license": "MIT",
   "devDependencies": {
     "@netlify/functions": "^1.4.0",
     "@types/ms": "^0.7.31",
