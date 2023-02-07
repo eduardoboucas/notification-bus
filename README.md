@@ -3,12 +3,18 @@
 A Node.js library for loading and rendering notifications from a remote API.
 
 ## Installation
-To install notification-bus in your project, run:
+
+To install `notification-bus` in your project, run:
 
 ```
 npm install notification-bus
 ```
 
+The API is distributed as a Netlify Function, although you should be able to change the implementation to fit any serverless function provider with support for Node.js.
+
+For a one-click deploy to Netlify, use the button below.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/eduardoboucas/notification-bus)
 
 ## Usage
 
@@ -32,6 +38,9 @@ bus.render()
 ```
 
 This uses the default renderer to show notifications using the format below.
+
+<img width="465" alt="Screenshot 2023-02-07 at 00 01 31" src="https://user-images.githubusercontent.com/4162329/217114299-43267757-65a1-4f51-860f-bd661c0efbf5.png">
+
 
 If you want to use your own renderer, you can supply a `renderer` property.
 
