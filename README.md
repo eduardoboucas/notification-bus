@@ -26,9 +26,9 @@ To use `notification-bus`, you first need to create an instance of the library a
 import { NotificationBus } from "notification-bus"
 
 const bus = new NotificationBus({
-  name: "my-cli",
+  name: "my-awesome-cli",
   version: "1.0.0",
-  url: "https://my-cli.netlify.app"
+  url: "https://notification-bus.netlify.app"
 })
 ```
 
