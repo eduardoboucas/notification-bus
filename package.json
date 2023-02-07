@@ -1,9 +1,10 @@
 {
   "name": "notification-bus",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Node.js library for loading and rendering notifications from a remote API",
-  "main": "index.js",
+  "main": "./dist/client/main.js",
+  "exports": "./dist/client/main.js",
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts"
