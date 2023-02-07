@@ -69,7 +69,7 @@ To create new notifications, edit the `data/events.json` file and add entries to
 - `title` (optional): The title of the notification
 - `severity` (optional): A severity level for the notification (1: critical, 2: warning, 3: information), which will influence the way the notification is rendered
 - `display_interval` (optional): If set, defines the minimum interval at which a notification can be shown; for example, if set to `"30 min"`, that notification will be shown at most once every 30 minutes
-- `inputs` (optional): A list of inputs that should be sent in the `render`/`getItems` call for the notification to match (see [#inputs](Inputs))
+- `inputs` (optional): A list of inputs that should be sent in the `render`/`getItems` call for the notification to match (see [Inputs](#inputs))
 - `min_app_version` (optional): The minimum version of the app required for the notification to match
 - `max_app_version` (optional): The maximum version of the app required for the notification to match
 - `min_node_version` (optional): The minimum version of Node.js required for the notification to match
